@@ -18,6 +18,8 @@
 *.cfgtmp
 *.dts.tmp
 
+config.tmp
+
 # Build tree
 /build-*
 
