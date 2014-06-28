@@ -32,7 +32,8 @@
 #define CONFIG_MX6DL
 #define CONFIG_MX6DL_DDR3
 #define CONFIG_MX6DL_SABRESD
-#define CONFIG_DDR_64BIT /* for DDR 64bit */
+//#define CONFIG_DDR_64BIT /* for DDR 64bit */
+#define CONFIG_DDR_32BIT /* for DDR 64bit */
 #define CONFIG_FLASH_HEADER
 #define CONFIG_FLASH_HEADER_OFFSET 0x400
 #define CONFIG_MX6_CLK32	   32768
