@@ -30,7 +30,8 @@
 
 #define CONFIG_MXC
 #define CONFIG_MX6DL
-#define CONFIG_MX6DL_DDR3
+// #define CONFIG_MX6DL_DDR3
+#define CONFIG_MX6DL_LPDDR2
 #define CONFIG_MX6DL_SABRESD
 //#define CONFIG_DDR_64BIT /* for DDR 64bit */
 #define CONFIG_DDR_32BIT /* for DDR 64bit */
@@ -180,7 +181,8 @@
  */
 #define CONFIG_NR_DRAM_BANKS	1
 #define PHYS_SDRAM_1		CSD0_DDR_BASE_ADDR
-#define PHYS_SDRAM_1_SIZE	(1u * 1024 * 1024 * 1024)
+#define PHYS_SDRAM_1_SIZE	(1u * 1024 * 1024 * 512)
+// #define PHYS_SDRAM_1_SIZE	(1u * 1024 * 1024 * 1024)
 #define iomem_valid_addr(addr, size) \
 	(addr >= PHYS_SDRAM_1 && addr <= (PHYS_SDRAM_1 + PHYS_SDRAM_1_SIZE))
 
