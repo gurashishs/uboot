@@ -34,7 +34,7 @@
 #define CONFIG_MX6DL_LPDDR2
 #define CONFIG_MX6DL_SABRESD
 //#define CONFIG_DDR_64BIT /* for DDR 64bit */
-#define CONFIG_DDR_32BIT /* for DDR 64bit */
+#define CONFIG_DDR_32BIT /* for DDR 32bit */
 #define CONFIG_FLASH_HEADER
 #define CONFIG_FLASH_HEADER_OFFSET 0x400
 #define CONFIG_MX6_CLK32	   32768
@@ -132,7 +132,7 @@
 #define CONFIG_SYS_BARGSIZE CONFIG_SYS_CBSIZE /* Boot Argument Buffer Size */
 
 #define CONFIG_SYS_MEMTEST_START	0x10000000	/* memtest works on */
-#define CONFIG_SYS_MEMTEST_END		0x10010000
+#define CONFIG_SYS_MEMTEST_END		0x20000000
 
 #undef	CONFIG_SYS_CLKS_IN_HZ		/* everything, incl board info, in Hz */
 
