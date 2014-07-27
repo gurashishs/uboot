@@ -139,6 +139,7 @@
 
 #define CONFIG_SYS_HZ			1000
 
+#define CONFIG_CMDLINE_EDITING
 
 /*
  * OCOTP Configs
