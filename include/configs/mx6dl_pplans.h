@@ -30,9 +30,11 @@
 
 #define CONFIG_MXC
 #define CONFIG_MX6DL
-#define CONFIG_MX6DL_DDR3
+// #define CONFIG_MX6DL_DDR3
+#define CONFIG_MX6DL_LPDDR2
 #define CONFIG_MX6DL_SABRESD
-#define CONFIG_DDR_64BIT /* for DDR 64bit */
+//#define CONFIG_DDR_64BIT /* for DDR 64bit */
+#define CONFIG_DDR_32BIT /* for DDR 32bit */
 #define CONFIG_FLASH_HEADER
 #define CONFIG_FLASH_HEADER_OFFSET 0x400
 #define CONFIG_MX6_CLK32	   32768
@@ -87,6 +89,9 @@
 #define CONFIG_CMD_BOOTD	/* bootd			*/
 #define CONFIG_CMD_CONSOLE	/* coninfo			*/
 #define CONFIG_CMD_RUN		/* run command in env variable	*/
+#define CONFIG_CMD_LEDSET   /* ledset -- allows user to change debug leds */
+#define CONFIG_CMD_MEMORY   /* ledset -- allows user to change debug leds */
+
 
 #define CONFIG_CMD_I2C
 #define CONFIG_CMD_IMXOTP
@@ -118,7 +123,7 @@
 /*
  * Miscellaneous configurable options
  */
-#define CONFIG_SYS_PROMPT		"MX6SDL SABRESD-MFG U-Boot > "
+#define CONFIG_SYS_PROMPT		"PPL U-Boot > "
 #define CONFIG_SYS_CBSIZE		256	/* Console I/O Buffer Size */
 /* Print Buffer Size */
 #define CONFIG_SYS_PBSIZE (CONFIG_SYS_CBSIZE + sizeof(CONFIG_SYS_PROMPT) + 16)
@@ -126,7 +131,7 @@
 #define CONFIG_SYS_BARGSIZE CONFIG_SYS_CBSIZE /* Boot Argument Buffer Size */
 
 #define CONFIG_SYS_MEMTEST_START	0x10000000	/* memtest works on */
-#define CONFIG_SYS_MEMTEST_END		0x10010000
+#define CONFIG_SYS_MEMTEST_END		0x2FFFFFFF
 
 #undef	CONFIG_SYS_CLKS_IN_HZ		/* everything, incl board info, in Hz */
 
@@ -151,7 +156,7 @@
 #ifdef CONFIG_CMD_I2C
 	#define CONFIG_HARD_I2C         1
 	#define CONFIG_I2C_MXC          1
-	#define CONFIG_SYS_I2C_PORT             I2C3_BASE_ADDR
+	#define CONFIG_SYS_I2C_PORT             I2C1_BASE_ADDR
 	#define CONFIG_SYS_I2C_SPEED            100000
 	#define CONFIG_SYS_I2C_SLAVE            0x1f
 #endif
@@ -175,7 +180,7 @@
  */
 #define CONFIG_NR_DRAM_BANKS	1
 #define PHYS_SDRAM_1		CSD0_DDR_BASE_ADDR
-#define PHYS_SDRAM_1_SIZE	(1u * 1024 * 1024 * 1024)
+#define PHYS_SDRAM_1_SIZE	(1u * 1024 * 1024 * 512)
 #define iomem_valid_addr(addr, size) \
 	(addr >= PHYS_SDRAM_1 && addr <= (PHYS_SDRAM_1 + PHYS_SDRAM_1_SIZE))
 
@@ -188,6 +193,8 @@
 /* #define CONFIG_FSL_ENV_IN_SF
 */
 /* #define CONFIG_FSL_ENV_IN_MMC */
+
+#define DEBUG 1
 
 #define CONFIG_ENV_SECT_SIZE    (128 * 1024)
 #define CONFIG_ENV_SIZE         CONFIG_ENV_SECT_SIZE
