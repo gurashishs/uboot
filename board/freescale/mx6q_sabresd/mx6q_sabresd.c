@@ -789,6 +789,18 @@ static int setup_pmic_voltages(void)
 			return -1;
 		}
 
+		value = 0x20;
+		if (i2c_write(0x8, 0x3C, 1, &value, 1)) {
+			printf("Set SW3A error!\n");
+			return -1;
+		}
+
+		value = 0x20;
+		if (i2c_write(0x8, 0x43, 1, &value, 1)) {
+			printf("Set SW3B error!\n");
+			return -1;
+		}
+
 		value = 0x01;
 		if (i2c_write(0x8, 0x7F, 1, &value, 1)) {
 			printf("Set new val 1 error!\n");
